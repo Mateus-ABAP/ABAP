@@ -1,4 +1,4 @@
-REPORT ZTESTANDO_ALV.
+REPORT ZRELATORIO_ALV_SFLIGHT.
 
 TYPES: BEGIN OF ty_voo,
          carrid     TYPE sflight-carrid,
@@ -66,9 +66,9 @@ FORM preparar_alv.
   layout-colwidth_optimize = 'X'.
 
   PERFORM adicionar_campo USING 'CARRID' 'Companhia' '10'.
-  PERFORM adicionar_campo USING 'CONNID' 'Conex„o'  '10'.
+  PERFORM adicionar_campo USING 'CONNID' 'Conex√£o'  '10'.
   PERFORM adicionar_campo USING 'FLDATE' 'Data do Voo' '15'.
-  PERFORM adicionar_campo USING 'PRICE'  'PreÁo Unit·rio' '15'.
+  PERFORM adicionar_campo USING 'PRICE'  'Pre√ßo Unit√°rio' '15'.
   PERFORM adicionar_campo USING 'SEATSMAX' 'Assentos Totais' '15'.
   PERFORM adicionar_campo USING 'SEATSOCC' 'Assentos Ocupados' '15'.
   PERFORM adicionar_campo USING 'LUCRO' 'Lucro Estimado' '15'.
@@ -105,7 +105,7 @@ FORM exibir_alv.
       OTHERS             = 2.
 
   IF sy-subrc <> 0.
-    MESSAGE 'Erro ao exibir relatÛrio ALV!' TYPE 'E'.
+    MESSAGE 'Erro ao exibir relat√≥rio ALV!' TYPE 'E'.
   ENDIF.
 
 ENDFORM.
