@@ -1,11 +1,29 @@
-# zrelatorio_alv_sflight
+🛠️ ABAP - Relatório ALV Simples com SFLIGHT
 
-Relatório ALV desenvolvido em ABAP para exibir dados da tabela SFLIGHT com filtros por:
+Este projeto apresenta um relatório ALV em ABAP que exibe dados da tabela padrão SFLIGHT, permitindo filtros dinâmicos e cálculo de lucro estimado.
 
-- Companhia aérea (`CARRID`)
-- Número de conexão (`CONNID`)
-- Intervalo de datas (`FLDATE`)
+## 📦 Funcionalidades
 
-Inclui cálculo de lucro estimado (`PRICE * SEATSOCC`) e exibição com layout otimizado (zebra e ajuste de colunas).
+- Exibir dados da tabela SFLIGHT
+- Filtros por:
+  - Companhia aérea (CARRID)
+  - Número da conexão (CONNID)
+  - Intervalo de datas (FLDATE)
+- Cálculo do lucro estimado (PRICE * SEATSOCC)
+- Exibição via ALV Grid com layout otimizado (zebra, ajuste automático de colunas)
 
-Exibição via `REUSE_ALV_GRID_DISPLAY`.
+## 🧱 Conceitos aplicados
+
+- Uso do módulo REUSE_ALV_GRID_DISPLAY para geração do ALV
+- Seleção dinâmica de dados com filtros em parâmetros
+- Manipulação de tabelas internas e campos calculados
+- Configuração de layout para melhor visualização
+- Estruturação do código em rotinas FORM
+
+## ✅ Objetivo
+
+Praticar e demonstrar a criação de relatórios ALV em ABAP, com uso de filtros, cálculos e layout customizado, aplicando boas práticas de programação.
+
+## 👨‍💻 Autor
+
+**Mateus Oliveira**
