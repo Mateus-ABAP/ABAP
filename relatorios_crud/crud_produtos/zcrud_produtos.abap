@@ -9,8 +9,7 @@ TYPES: BEGIN OF ty_produto,
          status    TYPE zprodutos-status,
        END OF ty_produto.
 
-DATA: it_produtos TYPE TABLE OF ty_produto,
-      wa_produto  TYPE ty_produto.
+DATA: wa_produto  TYPE ty_produto.
 
 SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE text-001.
   PARAMETERS: p_id  TYPE zprodutos-id_prod,
@@ -69,7 +68,7 @@ FORM criar_produto.
   ENDIF.
 
   IF wa_produto-status <> 'A' AND wa_produto-status <> 'I'.
-    MESSAGE: 'O status do produto sÛ pode ser A ou I' TYPE 'E'.
+    MESSAGE: 'O status do produto s√≥ pode ser A ou I' TYPE 'E'.
   ENDIF.
 
   IF wa_produto-nome      IS INITIAL OR
@@ -94,12 +93,12 @@ FORM exibir_produto.
   SELECT SINGLE * INTO wa_produto FROM zprodutos WHERE id_prod = p_id.
 
   IF sy-subrc <> 0.
-    MESSAGE 'Produto n„o encontrado' TYPE 'I'.
+    MESSAGE 'Produto n√£o encontrado' TYPE 'I'.
   ELSE.
     WRITE: / 'ID:',        wa_produto-id_prod,
              'Nome:',      wa_produto-nome,
              'Categoria:', wa_produto-categoria,
-             'PreÁo:',     wa_produto-preco,
+             'Pre√ßo:',     wa_produto-preco,
              'Status:',    wa_produto-status.
   ENDIF.
 ENDFORM.
@@ -112,7 +111,7 @@ FORM atualizar_produto.
 
   SELECT SINGLE id_prod INTO @DATA(lv_exist) FROM zprodutos WHERE id_prod = @wa_produto-id_prod.
   IF sy-subrc <> 0.
-    MESSAGE 'Produto n„o encontrado' TYPE 'E'.
+    MESSAGE 'Produto n√£o encontrado' TYPE 'E'.
   ENDIF.
 
   IF wa_produto-nome      IS INITIAL OR
@@ -136,17 +135,17 @@ ENDFORM.
 
 FORM deletar_produto.
   IF wa_produto-id_prod IS INITIAL.
-    MESSAGE 'Informe o ID do produto para apag·-lo' TYPE 'E'.
+    MESSAGE 'Informe o ID do produto para apag√°-lo' TYPE 'E'.
   ENDIF.
 
   SELECT SINGLE id_prod INTO @DATA(lv_exist) FROM zprodutos WHERE id_prod = @wa_produto-id_prod.
   IF sy-subrc <> 0.
-    MESSAGE 'Produto n„o encontrado' TYPE 'E'.
+    MESSAGE 'Produto n√£o encontrado' TYPE 'E'.
   ENDIF.
 
   DELETE FROM zprodutos WHERE id_prod = wa_produto-id_prod.
 
   IF sy-subrc = 0.
-    MESSAGE 'Produto excluÌdo com sucesso' TYPE 'S'.
+    MESSAGE 'Produto exclu√≠do com sucesso' TYPE 'S'.
   ENDIF.
 ENDFORM.
