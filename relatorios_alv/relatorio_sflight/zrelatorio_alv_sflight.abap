@@ -28,9 +28,6 @@ START-OF-SELECTION.
   PERFORM preparar_alv.
   PERFORM exibir_alv.
 
-*----------------------------------------------------------------*
-*       FORM buscar_dados                                             
-*----------------------------------------------------------------*
 FORM buscar_dados.
 
   SELECT carrid, connid, fldate, price, seatsmax, seatsocc
@@ -57,9 +54,6 @@ FORM buscar_dados.
 
 ENDFORM.
 
-*----------------------------------------------------------------*
-*       FORM preparar_alv                                             
-*----------------------------------------------------------------*
 FORM preparar_alv.
 
   layout-zebra             = 'X'.
@@ -75,9 +69,6 @@ FORM preparar_alv.
 
 ENDFORM.
 
-*----------------------------------------------------------------*
-*       FORM adicionar_campo                                          
-*----------------------------------------------------------------*
 FORM adicionar_campo USING p_campo p_texto p_largura.
 
   CLEAR wa_fieldcat.
@@ -88,9 +79,6 @@ FORM adicionar_campo USING p_campo p_texto p_largura.
 
 ENDFORM.
 
-*----------------------------------------------------------------*
-*       FORM exibir_alv                                               
-*----------------------------------------------------------------*
 FORM exibir_alv.
 
   CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
