@@ -1,4 +1,4 @@
-REPORT ZTESTANDO_ALV.
+REPORT ZRELATORIO_ALV.
 
 TYPES: BEGIN OF ty_voo,
          carrid     TYPE sflight-carrid,
