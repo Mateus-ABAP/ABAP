@@ -10,10 +10,6 @@ Este repositório contém uma coleção de exercícios, programas e projetos des
 - JOINs e filtros com SELECT
 - ALV (REUSE e OO com CL_GUI_ALV_GRID)
 - Modularização com FORM e FUNCTION MODULE
-- BAPIs e integração com dados do SAP
-- Cargas com BDC
-- Exportação para CSV
-- Enhancements e User Exits
 
 ## 📚 Objetivo
 
